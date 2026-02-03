@@ -1,17 +1,23 @@
 from sqlite3 import Connection, connect, Cursor
-from typing import Any
+from typing import Any 
 
 class Database:
-    def __init__(self, db_name: str) -> None :
+    def __init__(self, db_name: str) -> None:
         self.connection: Connection = connect(db_name)
         self.cursor: Cursor = self.connection.cursor()
+        self.executar('''
+                CREATE TABLE IF NOT EXISTS tarefas (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    titulo_tarefa TEXT NOT NULL,
+                    data_conclusao TEXT);
+                     ''')
 
     def executar(self, query: str, params: tuple = ()) -> Cursor:
         self.cursor.execute(query, params)
         self.connection.commit()
         return self.cursor
     
-    def buscar_tudo(self, query: str, params: tuple = ()) -> list[Any]:
+    def  buscar_tudo(self, query: str, params: tuple = ()) -> list[Any]:
         self.cursor.execute(query, params)
         return self.cursor.fetchall()
     
@@ -20,14 +26,12 @@ class Database:
 
     # Métodos para o gerenciamento de contexto
 
-    #Método de entrada do contexto 
     def __enter__(self):
-        print('/Entrando no contexto...')
+        print('Entrando no contexto...')
         return self
-
-    # Método de saída do contexto 
+    
     def __exit__(self, exc_type, exc_value, traceback):
-        print('Saindo do contetxo...')
+        print('Saindo do contexto...')
         self.close()
 
 

@@ -1,3 +1,102 @@
+/*Limpando as definições e padroes do navegador*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    
+}
+
+body{
+    background: linear-gradient(135deg, rgb(99, 25, 25), rgb(25, 25, 26));
+}
+
+h1 {
+    text-align: center;
+    color: aliceblue;
+    margin-bottom: 50px;
+}
+
+
+
+
+.Link-agenda {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2e0101; /* cor do botão */
+  color: white;              /* cor do texto */
+  text-decoration: none;     /* remove o sublinhado */
+  border-radius: 5px;        /* cantos arredondados */
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.Link-agenda:hover {
+  background-color: #272525; /* cor ao passar o mouse */
+}
+
+.caixa-principal{
+   width: 20rem;
+   height: 15rem;
+   background-color: rgb(128, 47, 47);
+   border-radius: 40px;
+  border: 2px solid rgb(44, 16, 16);
+}
+
+.caixa-principal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.caixa-home{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: antiquewhite;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 100px auto; /* centraliza abaixo do título */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+input, button {
+  padding: 12px;
+  border: 1px solid rgb(255, 243, 243);
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input:focus {
+  outline: none;
+  border-color: darkred;
+  box-shadow: 0 0 5px red;
+}
+
+button {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: darkred;
+}
+
 p {
-    color: red;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  color: red;
 }
